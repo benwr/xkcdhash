@@ -39,7 +39,7 @@ int popcnt(u08b_t a){
 
 void gen_random(char *s, const int len) {
   static const char alphanum[] =
-  "0123456789-_."
+  "0123456789"
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   "abcdefghijklmnopqrstuvwxyz";
   int i;
