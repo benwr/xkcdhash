@@ -5,9 +5,11 @@ It hasn't been tried anywhere else.
 
 # Usage #
 
-To set up, run `make`.
+To compile:
+`cd src; make; cd ..`
 
-To run, run `./run`.
+To run:
+`./run`
 
 # Motivation #
 

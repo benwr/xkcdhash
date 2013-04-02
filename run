@@ -6,4 +6,4 @@ limit=${1:-440}
 domain=${2:-vt.edu}
 
 dir=$(dirname "$0")
-${dir}/hasher ${limit} | ${dir}/autosubmit "$domain"
+${dir}/src/hasher "$limit" | ${dir}/autosubmit "$domain"
