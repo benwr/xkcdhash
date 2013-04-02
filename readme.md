@@ -1,6 +1,25 @@
+# Requirements #
+
+You'll need GNU Make and GCC, bash, and curl. This works on OS X and Linux.
+It hasn't been tried anywhere else.
+
+# Usage #
+
+To set up, run `make`.
+
+To run, run `./run`.
+
 # Motivation #
 
-This is a quick fork of sfackler's xkcdhash, which is generally pretty good.
+XKCD is having a competition! For honor! For glory!
+For Virginia Tech!
+
+(although, if you want to, you can change the school URL pretty easily.
+just poke around a bit; you'll find it)
+
+## Reasons for the Fork ##
+
+This is a quick fork of sfackler's xkcdhash.
 
 It fixes a few flaws, and it might also royally screw up some things. The
 changes include:
@@ -15,9 +34,3 @@ itself, and instead build totally random alphanumeric strings with random
 lengths.
 * The original did some weird stuff at install time. Now, just type `make`
 and you're good to go.
-
-# Usage #
-
-To set up, run `make`.
-
-To run, run `./run`.
