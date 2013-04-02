@@ -1,8 +1,8 @@
 main: hasher scripts
 
 hasher: 
-	cd src; \
-		gcc -O3 -march=native -std=c99 hasher.c skein.c skein_block.c -o ../hasher \
+	-cd src; \
+		gcc -O3 -march=native -std=c99 hasher.c skein.c skein_block.c -o ../hasher 2>/dev/null\
  		|| gcc -O3 -std=c99 hasher.c skein.c skein_block.c -o ../hasher
 
 scripts: autosubmit run
