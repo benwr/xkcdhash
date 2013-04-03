@@ -1,9 +1,22 @@
 #!/bin/bash
-# take "best" from first arg, default to 440
-limit=${1:-440}
+
+# get starting best needed hash value
+if [ -n "$1" ]; then
+	best=$1
+elif [ -f "submit-log" ]; then
+	while read rank data; do
+		if [ -z "$best" ] || [ "$rank" -lt "$best" ]; then
+			best=$rank
+		fi
+	done < submit-log
+fi
+if [ -z "$best" ]; then
+	best=440
+fi
+echo "Using $best as starting rank."
 
 # take domain name from second arg, default to "vt.edu"
 domain=${2:-vt.edu}
 
 dir=$(dirname "$0")
-${dir}/src/hasher "$limit" | ${dir}/autosubmit "$domain"
+${dir}/src/hasher "$best" | ${dir}/autosubmit "$domain"

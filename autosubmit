@@ -1,18 +1,12 @@
 #!/bin/bash
 set -e
 
-domain="$1"
-best=1000
+domain=${1:-vt.edu}
 
 while read rank data; do
-    if test "$rank" = Ehlo; then continue; fi
-    if test "$rank" -lt "$best"; then
-        echo "Submitting and logging $data ($rank bits off target)"
-        best=$rank
-        # TODO: log to file
-        echo "$rank $data" >> submit-log
-        curl --data "hashable=$data" "http://almamater.xkcd.com/?edu=$domain" >/dev/null 2>&1
-    else
-        echo "Not submitting rank $rank solution"
-    fi
+	echo "Submitting and logging $data ($rank bits off target)"
+best=$rank
+	# TODO: log to file
+	echo "$rank $data" >> submit-log
+	curl --data "hashable=$data" "http://almamater.xkcd.com/?edu=$domain" >/dev/null 2>&1
 done
